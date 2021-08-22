@@ -1,0 +1,27 @@
+Prefab created by chrjen#2648 (discord)
+
+Simple keycard reader. Reacts only to keycards and triggers only on the correct one.
+
+How to:
+1. Drag .vmap file to <SDK>/content/hlvr/maps/prefabs
+2. From withing hammer, click prefab tab and drag keycard_reader onto a wall and rotate as necessary.
+3. In object properties change keycard_color to your desired colour and make sure "Fixup entity names" is checked.
+4. Right click the prefab -> Selected prefabs -> Collapse (sorry, not sure how else to do output)
+5. Use output OnTrigger on the keycard_accepted_relay entity to unlock doors, etc.
+
+Extra:
+	Manage all keycard colours from one place:
+		1. Shift+Ctrl+M
+		2. Go to Map Variables tab
+		3. Add variable, ex.
+			Name: my_door_keycard_color
+			Type: color255
+			Value: <your colour>
+		4. Click on reader and keycard, and open object properties.
+		5. Find the colour property and click on chain symbol and pick your variable name.
+		6. Colour can now be seen and changed from the Map Variables tab.
+	Multiple accepted keycards:
+		Just duplicate the original keycard. Though any keycard with the same Name will work.
+	Multiple accepting keycard readers:
+		On all keycard_filter_name entities change the Filter Name object propeties to name of keycard(s).
+		You can use Map Variable for the name too.
